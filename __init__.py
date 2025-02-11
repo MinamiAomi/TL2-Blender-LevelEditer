@@ -25,6 +25,12 @@ from .collider import OBJECT_PT_collider
 from .draw_collider import DrawCollider
 from .disabled import MYADDON_OT_add_disabled
 from .disabled import OBJECT_PT_disabled
+from .spawn import MYADDON_OT_spawn_import_symbol
+from .spawn import MYADDON_OT_spawn_create_symbol
+from .spawn import MYADDON_OT_spawn_create_player_symbol
+from .spawn import MYADDON_OT_spawn_create_player_symbol_menu
+from .spawn import MYADDON_OT_spawn_create_enemy_symbol
+from .spawn import MYADDON_OT_spawn_create_enemy_symbol_menu
 
 #--------------------------------------------------------------------------------------------------#
 
@@ -50,7 +56,8 @@ class TOPBAR_MT_my_menu(bpy.types.Menu):
         self.layout.operator(MYADDON_OT_stretch_vertex.bl_idname, text=MYADDON_OT_stretch_vertex.bl_label)
         self.layout.operator(MYADDON_OT_create_ico_sphere.bl_idname, text=MYADDON_OT_create_ico_sphere.bl_label)
         self.layout.operator(MYADDON_OT_export_scene.bl_idname, text=MYADDON_OT_export_scene.bl_label)
-
+        self.layout.menu(MYADDON_OT_spawn_create_player_symbol_menu.bl_idname,text=MYADDON_OT_spawn_create_player_symbol_menu.bl_label)
+        self.layout.menu(MYADDON_OT_spawn_create_enemy_symbol_menu.bl_idname,text=MYADDON_OT_spawn_create_enemy_symbol_menu.bl_label)
 
 
     # 既存のメニューにサブメニューを追加
@@ -72,7 +79,13 @@ classes = (
     MYADDON_OT_add_collider,
     OBJECT_PT_collider,
     MYADDON_OT_add_disabled,
-    OBJECT_PT_disabled
+    OBJECT_PT_disabled,
+    MYADDON_OT_spawn_import_symbol,
+    MYADDON_OT_spawn_create_symbol,
+    MYADDON_OT_spawn_create_player_symbol,
+    MYADDON_OT_spawn_create_player_symbol_menu,
+    MYADDON_OT_spawn_create_enemy_symbol,
+    MYADDON_OT_spawn_create_enemy_symbol_menu
 )
 
 #--------------------------------------------------------------------------------------------------#
